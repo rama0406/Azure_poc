@@ -1,20 +1,14 @@
 trigger:
-  - main
+  - main  # Runs when code is pushed to the 'main' branch
 
 pool:
-  vmImage: 'ubuntu-latest'
-
-variables:
-  TF_VERSION: '1.5.0'
+  vmImage: 'ubuntu-latest'  # Uses a Microsoft-hosted Ubuntu agent
 
 steps:
-- task: UseTerraform@0
-  inputs:
-    terraformVersion: $(TF_VERSION)
+  - script: echo "Running test step..."
+    displayName: 'Test Step'
 
-- script: |
-    terraform init
-    terraform plan -out=tfplan
-    terraform apply -auto-approve tfplan
-  displayName: 'Terraform Deploy VM'
-  workingDirectory: $(System.DefaultWorkingDirectory)/terraform
+  - script: |
+      echo "Checking system info"
+      uname -a
+    displayName: 'System Info'
