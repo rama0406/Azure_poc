@@ -1,4 +1,4 @@
-trigger:
+trigger: none
   - main  # Runs when code is pushed to the 'main' branch
 
 pool:
