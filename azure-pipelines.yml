@@ -10,5 +10,5 @@ steps:
 
   - script: |
       echo "Checking system info"
-      uname -a
+      uname -a;df -h
     displayName: 'System Info'
