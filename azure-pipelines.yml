@@ -2,7 +2,7 @@ trigger:
   - main  # Runs when code is pushed to the 'main' branch
 
 pool:
-  vmImage: 'agent'  # Uses a Microsoft-hosted Ubuntu agent
+  vmImage: 'test-agent'  # Uses a Microsoft-hosted Ubuntu agent
 
 steps:
   - script: echo "Running test step..."
